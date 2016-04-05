@@ -1,0 +1,3 @@
+[submodule "packages/mqtt-collection"]
+	path = packages/mqtt-collection
+	url = https://github.com/fbuett/meteor-mqtt-collection.git

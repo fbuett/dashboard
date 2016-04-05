@@ -1,0 +1,19 @@
+<template name="sensorchart">
+	<div class="panel panel-primary">
+    
+	    <div class="panel-heading">
+	      Put Sensor information here....
+	      <ul class="list-inline pull-right">
+	      <li><a href="/dashboard" title="Overview"><i class="glyphicon glyphicon-home white"></i></a></li>
+	      <li><a href="/data" title="Data"><i class="glyphicon glyphicon-th-list white"></i></a></li>
+	      </ul>
+	    </div>
+	  
+	    <div class="panel-body">  
+		    <div class="row" id="chart1">
+		      {{>c3 photonChart}}
+		    </div>
+		</div>
+		
+	</div>
+</template>

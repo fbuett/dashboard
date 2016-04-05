@@ -1,0 +1,125 @@
+<template name="widgets">
+
+  <div class="panel panel-primary">
+    
+    <div class="panel-heading">
+      Put Sensor information here....
+      <ul class="list-inline pull-right">
+      <li><a href="/charts" title="Charts"><i class="glyphicon glyphicon-signal white"></i></a></li>
+      <li><a href="/data" title="Data"><i class="glyphicon glyphicon-th-list white"></i></a></li>
+      </ul>
+    </div>
+  
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="hero-widget well well-sm">
+            <div class="icon">
+               <i class="glyphicon glyphicon-cloud"></i>
+            </div>
+            <div class="text">
+              <var>
+                {{#with lastValues}}
+                  {{message.d.temperatur}}&deg;C
+                {{/with}}
+              </var>
+              <label class="text-muted">degrees Celsius</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="hero-widget well well-sm">
+            <div class="icon">
+              <i class="glyphicon glyphicon-tint"></i>
+            </div>
+            <div class="text">
+              <var>
+                {{#with lastValues}}
+                  {{message.d.humidity}}&#37;
+                {{/with}}                      
+              </var>
+                <label class="text-muted">percent Humidity</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="hero-widget well well-sm">
+            <div class="icon">
+              <i class="glyphicon glyphicon-sunglasses"></i>
+            </div>
+            <div class="text">
+              <var>
+                {{#with lastValues}}
+                  {{message.d.ambient}}
+                {{/with}}                   
+              </var>
+              <label class="text-muted">ambient Light</label>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </div>      
+
+    <div class="panel-footer">
+      {{#with lastValues}}
+        last updated: {{formatDateRelative createdAt}}
+      {{/with}}
+    </div>
+
+  </div>
+
+
+  <div class="panel panel-primary">
+    
+    <div class="panel-heading">
+      Put Sensor information here....
+      <ul class="list-inline pull-right">
+      <li><a href="/charts" title="Charts"><i class="glyphicon glyphicon-signal white"></i></a></li>
+      <li><a href="/data" title="Data"><i class="glyphicon glyphicon-th-list white"></i></a></li>
+      </ul>
+    </div>
+  
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="hero-widget well well-sm">
+            <div class="icon">
+               <i class="glyphicon glyphicon-home"></i>
+            </div>
+            <div class="text">
+              <var>
+                  1
+              </var>
+              <label class="text-muted">At home</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="hero-widget well well-sm">
+            <div class="icon">
+              <i class="glyphicon glyphicon-road"></i>
+            </div>
+            <div class="text">
+              <var>
+                1                      
+              </var>
+                <label class="text-muted">On the road</label>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </div>      
+
+    <div class="panel-footer">
+      {{#with lastValues}}
+        last updated: {{formatDateRelative createdAt}}
+      {{/with}}
+    </div>
+
+  </div>
+</template>
