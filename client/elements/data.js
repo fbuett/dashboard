@@ -39,7 +39,7 @@ Template.sensortable.helpers({
     return {
         fields: [
           { key: 'topic', label: 'Topic' },
-          { key: 'message', label: 'Zone', fn: function (value, object, key) {return value.data.zoneName;}},
+          { key: 'message', label: 'Zone', fn: function (value, object, key) {return value.d.zoneName;}},
           { key: 'createdAt', label: 'Timestamp', sortOrder: 0, sortDirection: 'descending'},
         ]
       }
@@ -47,13 +47,15 @@ Template.sensortable.helpers({
 });
 
 Template.sensortable.events({
+  /*
+    receive click events on table
+  */
   'click .reactive-table tbody tr': function (event) {
-    console.log(this);
-    console.log(event);
-
     event.preventDefault();
+    
     var post = this;
-    // checks if the actual clicked element has the class `delete`
+
+    // checks if the actual clicked element has the class `deletebtn`
     if (event.target.id == "deletebtn") {
       Sensors.remove(post._id)
     }

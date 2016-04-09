@@ -39,7 +39,6 @@ Template.sensorchart.helpers({
           }
         }
       },
-      zoom: {enabled: true},
       subchart: {show: true},
     };
   }
