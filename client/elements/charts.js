@@ -11,7 +11,7 @@ Template.sensorchart.helpers({
     var colX = ["x"];
 
     var data = _.pluck(Sensors.find({ topic: /^iot-2\/type\/Photon/}).fetch(), "message");
-    var time = _.pluck(Sensors.find().fetch(), "createdAt");
+    var time = _.pluck(Sensors.find({ topic: /^iot-2\/type\/Photon/}).fetch(), "createdAt");
     
     _.each(time, function(g) {
       colX.push(g);
@@ -35,7 +35,7 @@ Template.sensorchart.helpers({
         x: {
           type: 'timeseries',
           tick: {
-            format: '%d %H:%m'
+            format: '%d %H:%M'
           }
         }
       },
